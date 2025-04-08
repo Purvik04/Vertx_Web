@@ -30,7 +30,7 @@ public class HttpServerWebDemo {
 
             httpServerResponse.write("Kem\n");
 
-            routingContext.vertx().setTimer(3000, id -> {
+            routingContext.vertx().setTimer(1000, id -> {
                 routingContext.next();
             });
         });
@@ -41,7 +41,7 @@ public class HttpServerWebDemo {
 
             httpServerResponse.write("chho\n");
 
-            routingContext.vertx().setTimer(3000, id -> {
+            routingContext.vertx().setTimer(1000, id -> {
                 routingContext.next();
             });
         });
@@ -52,7 +52,7 @@ public class HttpServerWebDemo {
 
             httpServerResponse.write("bhai?\n");
 
-            routingContext.response().end();
+            httpServerResponse.end();
         });
 
         httpServer.requestHandler(router).listen().onComplete(ar -> {
